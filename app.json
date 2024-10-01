@@ -1,15 +1,16 @@
-{}
-{
+echo {
   "name": "Your App Name",
   "description": "A brief description of your app.",
-  "addons": [],
-  "env": {
-    "EXAMPLE_ENV_VAR": {
-      "required": true
-    }
-  },
   "scripts": {
     "postdeploy": "python manage.py migrate"
-  }
-}
- 
+  },
+  "env": {
+    "DEBUG": {
+      "description": "Debug mode",
+      "value": "false"
+    }
+  },
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ]
+} > app.json
